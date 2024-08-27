@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "citeproc"
+version = "0.6.1.dev"
+description = "Citations and bibliography formatter"
+authors = ["Brecht Machiels <brecht@mos6581.org>"]
+readme = "README.rst"
+homepage = "https://github.com/citeproc-py/citeproc-py"
+keywords = ["csl", "citation", "html", "rst", "bibtex", "xml"]
+license = "2-Clause BSD License"
+
+[tool.poetry.scripts]
+csl_unsorted = "citeproc.csl_unsorted:main"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+lxml = "^5.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+coverage = {extras = ["toml"], version = "^7.6.1"}
+pytest-cov = "^5.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.report]
+show_missing = true
